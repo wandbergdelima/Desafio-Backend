@@ -41,14 +41,17 @@ app.post("/enviarenderecos", async (req, res) => {
 });
 
 // Calculando a Distancia entre dois pontos Latitude e Longitude
+// preciso criar os pontos e pegar os valores do formulario ou imput e retornar o resultado.
 function calcularDistancia(end1, end2) {
   const distancia = Math.sqrt(
     (end1.lng - end1.lat) * (end1.lng - end1.lat) + (end2.lng - end2.lat) * (end2.lng - end2.lat)
   );
   return distancia;
 }
+
+
 app.get("/", (req, res) => {
-  res.sendFile("C:/Users/Hugo/Downloads/Desafio Backend/Desafio Backend/src/index.html");
+  res.sendFile("C:/Users/Wandberg d/Desktop/Desafio Resilia/Desafio Backend/src/index.html");
 }); // retorno da pg home
 
 app.listen(3000);
