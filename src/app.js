@@ -52,3 +52,53 @@ app.get("/", (req, res) => {
 }); // retorno da pg home
 
 app.listen(3000);
+
+
+/*
+
+Preciso rever o código, pois não está funcionando. essa parte do calculo de longitude e latitude está dando erro.
+
+app.post("/enviarenderecos", async (req, res) => {
+  const enderecos = req.body.enderecos;
+  const enderecosDivididos = enderecos.split(";");
+  let resultadoBuscas = [];
+
+  for (let i = 0; i < enderecosDivididos.length; i++) {
+    const dados = await buscarDados(enderecosDivididos[i]);
+    const dadosDetalhados = retirarLatLng(dados);
+    resultadoBuscas.push(dadosDetalhados);
+  }
+  let listaDistancias = [];
+
+  for (let i = 0; i < resultadoBuscas.length; i++) {
+    for (let j = i + 1; j < resultadoBuscas.length; j++) {
+      const distancia = calcularDistancia(
+        resultadoBuscas[i],
+        resultadoBuscas[j]
+      );
+      listaDistancias.push({
+        endereco1: resultadoBuscas[i].nomeend,
+        endereco2: resultadoBuscas[j].nomeend,
+        distancia: distancia
+      });
+    }
+  }
+
+  let menorDistancia = listaDistancias[0];
+  let maiorDistancia = listaDistancias[0];
+
+  for (let i = 1; i < listaDistancias.length; i++) {
+    if (listaDistancias[i].distancia < menorDistancia.distancia) {
+      menorDistancia = listaDistancias[i];
+    }
+
+    if (listaDistancias[i].distancia > maiorDistancia.distancia) {
+      maiorDistancia = listaDistancias[i];
+    }
+  }
+
+  // Separar para Funções
+  res.send({ menorDistancia, maiorDistancia });
+});
+
+*/ 
