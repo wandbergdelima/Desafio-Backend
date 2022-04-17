@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.urlencoded({ extended: true }))
 
 async function buscarDados(endereco) {
-  const apiKey = 'AIzaSyAwhV8rNoZds2zabYJAin4oCSVfRfYo0k4'; //Adicione sua chave
+  const apiKey = ''; //Adicione sua chave
   const URL = (`https://maps.googleapis.com/maps/api/geocode/json?address=${endereco}&key=${apiKey}`
   );
 
